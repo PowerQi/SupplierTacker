@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>title</title>
+<!-- Bootstrap -->
+<link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="/stylesheets/bootstrap-theme.min.css" rel="stylesheet" media="screen">
+<!-- <link href="css/bootstrap-responsive.min.css" rel="stylesheet" media="screen"> -->
+</head>
+<body screen_capture_injected="true">   
+
+  <div class="container">
+  <div class="container" style="margin-top:30px">
+<div class="col-md-12">
+    <div class="panel panel-default">
+  <div class="panel-heading"><h3 class="panel-title"><strong>登录 </strong></h3></div>
+  <div class="panel-body">
+   <form role="form">
+  <div class="form-group">
+    <label for="exampleInputEmail1">用戶名</label>
+    <input type="text" id="username" class="form-control" placeholder="用户名"/>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">密码</label>
+        <input type="text" id="password"  class="form-control"  placeholder="密码"/>
+  </div>
+    <div class="form-group">
+    <img id="icode" onclick="rcode()" src="" style="float: left;padding-right: 10px;" height="40px" width="125px"> <input type="text" id="code" placeholder="验证码" style="width:150px"   class="form-control"/>
+      </div>
+  <button type="button" onclick="login()" class="btn btn-sm btn-default">登录</button>
+</form>
+  </div>
+</div>
+</div>
+<script src="/javascripts/jquery.min.js"></script>
+<script src="/javascripts/bootstrap.min.js"></script>
+ <script>
+    var rand = {};
+    var session = ""
+    rand.get = function (begin,end){
+     return Math.floor(Math.random()*(end-begin))+begin;
+    }
+
+     $(function(){
+         $.getJSON("session",function(result){
+            session = result.headers;
+            rcode()
+        });
+     })
+
+     function rcode(){
+        $.get("code?"+session,function(result){
+            $("#icode").attr("src",result)
+        });
+     }
+
+     function login(){
+        //area=1&image.x=11&image.y=1&userid=rt52324=quatd&checkstr=12345
+        var s = "area=5&imagex="+rand.get(1,13)+"&imagey="+rand.get(1,13)+"&userid="+$('#username').val()+"&passwd="+$('#password').val()+"&checkstr="+$('#code').val();
+        $.get("login?"+session+"&"+s,function(result){
+            if (result=="登录成功"){
+                location.href="/i?"+session;
+            }else{
+                alert("登录錯誤")
+            }
+        });
+
+     }
+    </script>
+
+</body>
+</html>

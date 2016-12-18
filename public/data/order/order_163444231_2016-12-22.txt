@@ -1,0 +1,13 @@
+货品编号,单价,数量
+undefined,5.6692,320
+undefined,4.5812,320
+undefined,2.2333,320
+undefined,7.9573,204
+undefined,5.6667,408
+undefined,7.9573,408
+undefined,14.2564,204
+undefined,16.0342,204
+undefined,34.2991,204
+undefined,20.5556,204
+undefined,17.1197,204
+undefined,11.3932,204

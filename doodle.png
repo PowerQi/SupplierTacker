@@ -1,0 +1,251 @@
+<HTML>
+  <HEAD>
+    <STYLE>
+      TH		{font-size:11pt; font-family:arial}
+      TD		{font-size:9pt; font-family:arial}
+      P			{font-size:8pt; font-family:arial}
+      H4		{font-size:12pt; font-family: arial}
+      FONT		{font-size:10pt; font-family:arial; font-weight=bold}
+      A:link 		{color:808080}
+      A.class1:link	{color:blue}
+      A:visited 	{color:808080}
+      A.class1:visited	{color:blue}
+      A:hover 		{color: red}
+      A.class1:hover	{color: red}
+    .style1 {
+	color: #FF3300;
+	font-weight: bold;
+	font-style: italic;
+}
+    </STYLE>
+    <SCRIPT language="JavaScript" >
+      function focus(){
+        document.login.userid.focus();
+      }
+
+      function act(){  
+	var chk_u = 1;
+	var chk_p = 1;
+        if ((document.login.userid.value == "")) {
+          alert("名称不可空白");
+          document.login.userid.focus();
+          chk_u = 0;
+        }
+        if ((document.login.passwd.value == "")) {
+          alert("密码不可空白");
+          document.login.passwd.focus();
+          chk_p = 0;
+        }
+
+        if ( chk_u == 1 && chk_p == 1 ) {
+          document.login.action = "./php/scm_login_check.php";
+          document.login.submit();
+       //   return true;
+	}
+      }
+    </SCRIPT>
+  </HEAD>
+  <TITLE>供应商B2B服务系统</TITLE> 
+  <BODY topmargin="2" bgcolor=FFFDFF onLoad="focus()"> 
+    <TABLE width="100%" cellpadding="0" cellspacing="0">
+      <TR>
+        <TD width=30%>
+          <IMG src="./blank.gif" height="55" width="150" vspace="0" hspace="0"></TD>
+        <TD>
+        </TD>
+        <TD width="30%">
+          <TABLE width="100%" align="right" border="0" cellpadding="1" cellspacing="0">
+            <TR>
+              
+          <TD height=5 align="right" STYLE="color:blue"> &diams;<A href="https://supplier.rt-mart.com.cn">关於本公司</A> 
+            &diams;<A href="./php/privacy.php">隐私权</A> &diams;<A href="javascript:window.external.AddFavorite('https://supplier.rt-mart.com.cn','供应商B2B服务网站')">加入我的最爱</A> 
+            &diams;<A href="https://supplier.rt-mart.com.cn">回首页</A> </TD>
+            </TR>
+            <TR height="1" bgcolor="#CCCCCC">
+              <TD></TD>
+            </TR>
+          </TABLE>
+        </TD>
+      </TR>
+    </TABLE>
+    <HR>
+    <TABLE width=100%>
+      <TR>
+        
+    <TD width=60% height="299" align=center valign=top> 
+      <H3>--- 欢迎进入供应商B2B服务系统 ---</H3>
+          
+      <BLOCKQUOTE>请立即於右侧登入，享受提供给供应商的完善服务</BLOCKQUOTE>
+
+    <BLOCKQUOTE>
+<a href='http://www.feiniu.com' target='_blank'><img border=0 src='/images/feiniu.gif'></a>
+     </BLOCKQUOTE>
+          
+      <TABLE width=84% align=center CELLSPACING=0 CELLPADDING=0>
+        <TR bgcolor=LIGHTSKYBLUE> 
+          <TH colspan=5><font color="#FF0000">讯息公告</font></TH>
+            </TR>
+            <TR>
+              
+          <TD width=1 bgcolor=LIGHTSKYBLUE>&nbsp; </TD>
+          <TD width=11 bgcolor="LIGHTSKYBLUE"></TD>
+              
+          <TD width="630" bgcolor="LIGHTSKYBLUE">
+		  
+		  
+<img src='./php/gif/013.gif'><a href=/doc/2016052701.doc><font color=red>中国商品数据共享平台（新平台）上线通知！</font></a><br><br><img src='./php/gif/013.gif'><a href=/doc/2015050502.htm><font color=red>物流作业须知</font></a><br><br><img src='./php/gif/013.gif'><a href=/doc/2014092901.htm><font color=red>系统公告</font></a><br><br><br><br><br><br><br><br>          </TD> 
+              
+          <TD width=11 bgcolor=LIGHTSKYBLUE></TD>
+            </TR>
+            <TR bgcolor=lightskyblue height=1><TD colspan=4></TD></TR>
+          </TABLE>
+             
+        </TD>
+        
+    <TD width=34% align=center> <font color="red">请输入帐号与密码</font> 
+      <TABLE width="96%" cellpadding="0" cellspacing="0">
+        <FORM name="login" method="post">
+            <TR height=20>
+              <TD colspan=10 bgcolor="#FF99CC" valign=middle>
+                <FONT>&nbsp;供应商登入</FONT>  
+              </TD>
+            </TR>
+            <TR height=30>
+              <TD width="0%" bgcolor="#FF99CC"></TD>
+              
+            <TD width="43%" rowspan=3>区域 
+              <select name="area">
+                <option value="1" selected>华东</option>
+                <option value="2">华北</option>
+                <option value="3">东北</option>
+                <option value="4">华中</option>
+                <option value="5">华南</option>
+              </select>
+              <a href="scm_logfail.php" class="class1"> 无法登入 ?</a>&nbsp;<a href="scm_logfail.php" class="class1">
+              <!--     <A HREF="f_name.php" class="class1">忘记帐号?</A>&nbsp;
+           -->
+              </a> </TD>
+            <TD width="7%" align="center" rowspan=3> 
+              <input name="image" type="image" onClick="act()" src="./php/gif/login.gif"> 
+            </TD>
+              
+            <TD width="50%" align="right"><div align="left">帐&nbsp;&nbsp;&nbsp;&nbsp;号 
+                <input type="text" name="userid" size="10" maxlength="8">
+              </div></TD>
+              <TD width="0%" bgcolor="#FF99CC"></TD>
+            </TR>
+
+            <TR height=30>
+              <TD width="0%" bgcolor="#FF99CC"></TD>
+              
+            <TD align="right"> <div align="left">密&nbsp;&nbsp;&nbsp;&nbsp;码 
+                <input type="password" name="passwd" size="10" maxlength="8">
+              </div></TD> 
+           <!--     <A HREF="f_passwd.php" class="class1">忘记密码?</A>&nbsp;</TD>  -->
+                <TD width="0%" bgcolor="#FF99CC"></TD>
+            </TR>
+
+           <TR height=30>
+             <TD width="0%" bgcolor="#FF99CC"></TD>
+
+           <TD align="right"> <div align="left">校验码
+               <input type="password" name="checkstr" id="checkstr" size="10" maxlength="5">
+	       <img src="code.php" >
+             </div></TD>
+               <TD width="0%" bgcolor="#FF99CC"></TD>
+           </TR>
+             
+          <TR> 
+            <TD colspan=6 bgcolor="#FF99CC"></TD>
+             </TR>
+            </FORM>
+          </TABLE>
+          
+      <TABLE width=95%>
+        <TD> <BR>
+            本页面仅供供应商查询之用，若您是品牌供应商，请按<A href="index_pp.php" class="class1">此处</A>登录。<BR>
+            若您是本公司供应商，但忘记或没有帐号密码或是您有任何其他问题，请与我们的采购联络。谢谢!!<BR> 
+	    本页面仅供供应商查询之用，若您是设备供应商，请按<A href='https://golden.rt-mart.com.cn/index.php/Public/login?ssid=ae8da10407c6eb16dd9038e10d332ebb' class="class1">此处</A>登录。<BR>
+          <!--             <TABLE width=5%>
+              <IMG src="./gif/clickme_guy.gif"><A href="scm_qa
+.html" class="class1">资讯系统 Ｑ＆Ａ</A></TABLE>
+-->
+        </TD>
+      </TABLE>
+<!--
+	<TABLE width=95%>
+<TD>
+<BR>
+供应商腾讯财付通税号认证，请单击<A href="./php/tx_taxno_check_form.php" class="class1">此处</A>
+<BR>
+     </TD>
+     </TABLE>
+-->
+    <TABLE width=95%>
+       <TD>
+         <BR>
+           <img src='/doc/tx/tx.bmp'>
+           手机扫一扫,了解腾讯大润发互联网贷款业务详情
+         <BR>
+      </TD>
+    </TABLE>
+
+          <BR>
+    </TD>
+      </TR>
+    <!--
+    <TD><a href="/doc/2012082902.html">1.供应商<付款通知书>操作流程(自动匹配)-全国适用</a></TD>
+    -->
+     
+    </TABLE>
+    
+    <TABLE>
+        <TR><TD><a href="./doc/2012082902.html" style="margin-left:64px">1.供应商<付款通知书>操
+作流程(自动匹配)-全国适用</a></TD>
+        <TR><TD><a href="./doc/20120912-1.html" style="margin-left:64px">2.供应商开票<专柜>操作流程-全国适用</a></TD>
+    </TABLE>
+
+<!--
+<br>
+
+<span style="font-size:11pt;font-family:ARIAL RED,Times New Roman" id="ANIMA_TEXT_COLOR3"
+      SET_COLOR="red" SET_TIME="0" CURRENT_CHAR SET_TEXT><b><font color="red">-----  敬爱的供应商伙伴, 网站主机正进行优化,销售与库存量查询功能暂停使用.如果造成您的不便与困扰, 恳请您体谅. ----- </font></b></span>
+<br>
+-->
+    <HR>
+    <TABLE width="100%">
+
+      <TR>
+        <TD width="100%" align="center" colspan=2>
+	<!--
+	  <marquee direction='left' scrollamount=10 onmousemove="this.stop()" onmouseout="this.start()"> 
+             <a style="text-decoration:none;" href="/doc/tx/2015052202.htm"><font style="color:red; font-size:15px">大润发腾讯互联网贷款业务正式上线！利率低，操作便捷！详情点击查看。（一期面向华东地区供应商）</font></a>
+	  </marquee> 
+	-->
+	<font style="color:red; font-size:12px">
+          腾讯大润发互联网贷款业务正式上线!
+       </font>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+       <a style="text-decoration:none;" href="/doc/tx/2015083101.htm" target="_blank"><font style="color:red; font-size:12px">★业务简介</font></a>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+       <a style="text-decoration:none;" href="/doc/tx/2015083102.htm" target="_blank"><font style="color:red; font-size:12px">★申请流程</font></a>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+       <a style="text-decoration:none;" href="/doc/tx/2015083103.htm" target="_blank"><font style="color:red; font-size:12px">★业务联系人</font></a>
+        </TD>
+      </TR>
+
+      <TR>
+        <TD width="50%">
+          <P STYLE="color:808080">强烈建议使用 IE 5.0以上版本或IE6,以IE7或IE8将会导致不正常現象<BR>
+           请将屏幕设定成 800X600 解析度，以达最佳浏览效果</P>
+        </TD>
+        <TD width="50%" align="right">
+          <P STYLE="color:808080"><BR>
+          2004 &copy;<BR>
+          All rights reserved.<BR>
+         <font color=white>by rt-mart </font></P>
+        </TD>
+      </TR>
+    </TABLE>
+  </BODY>
+</HTML>

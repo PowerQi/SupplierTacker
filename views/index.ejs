@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>title</title>
+<!-- Bootstrap -->
+<link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="/stylesheets/bootstrap-theme.min.css" rel="stylesheet" media="screen">
+<!-- <link href="css/bootstrap-responsive.min.css" rel="stylesheet" media="screen"> -->
+</head>
+<body screen_capture_injected="true">   
+
+  <!--
+  <div class="container">
+			<section class="loginBox row-fluid">
+					<div class="tabbable" id="tabs-634549">
+							<div class="tab-pane active" id="panel-549981">
+								<DIV><input type="text" name="username" placeholder="用户名"/></DIV>
+								<DIV>
+									<input type="text" name="password" placeholder="密码"/>
+								</DIV>
+							   <DIV class="span1"><input type="button" value=" 登录 " class="btn btn-primary"></DIV>
+							</div>
+						</div>
+					</div>
+        </section>
+    </div>
+   --> 
+ 
+<h1>正常单据</h1> <button onClick="downloadOrder()">批量下载</button></br>
+
+<% if (data.order.length) { %>  
+    <% data.order.forEach(function(obj){ %>  
+         <a name='<%= obj.name %>'><%= obj.id %></a> &nbsp;&nbsp;
+    <% }) %>  
+<% } %>  
+
+<h1>退货单据</h1><button onClick="downloadReturn()">批量下载</button></br>
+
+<% if (data.return.length) { %>  
+    <% data.return.forEach(function(obj){ %>  
+         <a name='<%= obj.name %>'><%= obj.id %></a>  &nbsp;&nbsp;
+    <% }) %>  
+<% } %>  
+    
+
+<script src="/javascripts/jquery.min.js"></script>
+<script src="/javascripts/bootstrap.min.js"></script>
+<script>
+    $("a").each(function(){
+        var id = $(this).text();
+        var name =$(this).attr('name');
+        var temp_path = 'order';
+        if (id.indexOf('*') == 0) {
+            temp_path = 'return';
+        }
+        var url = 'https://supplier-track-powerqi.c9users.io/download/' + temp_path + '/' + name;
+        $(this).attr("href", url);
+    });
+    
+    function downloadOrder(){
+        location.href = 'https://supplier-track-powerqi.c9users.io/download/order';
+    }
+    
+    function downloadReturn(){
+        location.href = 'https://supplier-track-powerqi.c9users.io/download/return';
+    }
+</script>
+</body>
+</html>
